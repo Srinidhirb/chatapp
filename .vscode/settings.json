@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "undefined/subscriptions/e242a2d4-b1a7-49c7-8730-24d0099fa922/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/Chatappforai",
+    "appService.deploySubpath": "."
+}

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        .container {
+            display: flex;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            width: 80%;
+            max-width: 1000px;
+            margin: auto;
+        }
+        
+        .image-container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        
+        .form-container {
+            flex: 1;
+            padding: 20px;
+        }
+        
+        .form-container h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        
+        .input-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .input-group label {
+            margin-right: 10px;
+            font-size: 18px;
+            color: #333;
+        }
+        
+        .input-group input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        
+        .remember-me {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .remember-me input {
+            margin-right: 10px;
+        }
+        
+        .remember-me label {
+            font-size: 14px;
+        }
+        
+        .button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        .button:hover {
+            background-color: #0056b3;
+        }
+        
+        .create-account {
+            margin-top: 20px;
+        }
+        
+        .create-account a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        
+        .create-account a:hover {
+            text-decoration: underline;
+        }
+        
+        .social-login {
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        .social-login p {
+            margin-bottom: 10px;
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .social-btn {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            border-radius: 50%;
+            background-color: #eee;
+            color: #333;
+            text-align: center;
+            margin: 0 5px;
+            transition: background-color 0.3s;
+        }
+        
+        .social-btn:hover {
+            background-color: #ddd;
+        }
+        
+        .social-btn.fb {
+            color: #3b5998;
+        }
+        
+        .social-btn.twitter {
+            color: #1da1f2;
+        }
+        
+        .social-btn.google {
+            color: #db4437;
+        }
+        
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="image-container">
+            <img src="/2.png" alt="Illustration">
+        </div>
+        <div class="form-container">
+            <h2>Sign up</h2>
+            <form action="/api/sign-in" method="POST">
+                <div class="input-group">
+                    <label for="username"><i class="fas fa-user"></i></label>
+                    <input type="text"  id="username" name="username" placeholder="Username" required>
+                </div>
+                <div class="input-group">
+                    <label for="password"><i class="fas fa-lock"></i></label>
+                    <input type="password" id="password" name="password" placeholder="Password" required>
+                </div>
+                <div class="remember-me">
+                    <input type="checkbox" id="remember-me" name="remember-me">
+                    <label for="remember-me">Remember me</label>
+                </div>
+                <input class="button" type="submit" value="LOG IN"></input>
+            </form>
+            <div class="create-account">
+                <a href="/sign-up">Create an account</a>
+            </div>
+            <div class="social-login">
+                <p>Or login with</p>
+                <a href="#" class="social-btn fb"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-btn twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-btn google"><i class="fab fa-google"></i></a>
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>

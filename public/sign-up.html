@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        .container {
+            display: flex;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            width: 80%;
+            max-width: 1000px;
+            margin: auto;
+        }
+        
+        .form-container {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .form-container h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        
+        .input-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .input-group label {
+            margin-right: 10px;
+            font-size: 18px;
+            color: #333;
+        }
+        
+        .input-group input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        
+        .terms {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .terms input {
+            margin-right: 10px;
+        }
+        
+        .terms label {
+            font-size: 14px;
+        }
+        
+        .terms a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        
+        .terms a:hover {
+            text-decoration: underline;
+        }
+        
+        .button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        .button:hover {
+            background-color: #0056b3;
+        }
+        
+        .member {
+            margin-top: 20px;
+        }
+        
+        .member a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        
+        .member a:hover {
+            text-decoration: underline;
+        }
+        
+        .image-container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h2>Sign up</h2>
+            <form action="/api/sign-up" method="POST">
+                <div class="input-group">
+                    <label for="name"><i class="fas fa-user"></i></label>
+                    <input type="text" id="username" name="username"  placeholder="Username" required>
+                </div>
+               
+                <div class="input-group">
+                    <label for="password"><i class="fas fa-lock"></i></label>
+                    <input type="password" id="password" name="password" minlength=5 placeholder="Password" required>
+                </div>
+                
+                
+                <input class="button" type="submit" value="SIGN UP"></input>
+            </form>
+            <p class="login__text">Already have an account? <a href="/sign-in">Sign in.</a></p>
+        </div>
+        <div class="image-container">
+            <img src="/1.png" alt="Illustration">
+        </div>
+
+    </div>
+</body>
+</html>
