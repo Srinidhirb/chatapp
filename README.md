@@ -44,7 +44,7 @@ Before you begin, ensure you have the following installed:
 
 ## Usage
 
-- Navigate to http://localhost:3000 in your web browser.
+- Navigate to http://localhost:8080 in your web browser.
 - Sign up for a new account or sign in with an existing account.
 - Use the chat functionality to send and receive messages in real-time.
 - Edit your account details or delete your account as needed.
