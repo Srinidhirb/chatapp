@@ -128,9 +128,7 @@ div.home__container {
     div.home__container__users-view {
         width: 105px;
     }
-    div.home__container__chat-view {
-        width: calc(100% - 125px);
-    }
+   
 }
 
 div.home__container__users-view {
@@ -156,7 +154,7 @@ div.home__container__users-view__list__user, div.home__container__chat-view__cha
     margin-top: 5px;
     white-space: initial;
     word-wrap: break-word;
-    padding: 15px;
+    padding: 15px 10px 15px 0;
    
 
    
@@ -172,13 +170,20 @@ button.home__container__users-view__bottom__btn {
     height: 30px;
     border: none;
     border-radius: 5px;
-    background-color: #007bff;
+    display: flex;
+    background-color: #007bffac;
     color: white;
     font-weight: bold;
     cursor: pointer;
     margin-bottom: 5px;
+    transition: all 0.5s ease !important;
+    gap: 10px;
+    align-items: center;
+    height: 50px;
 }
-
+button.home__container__users-view__bottom__btn:hover{
+    background-color: #007bff;
+}
 div.home__container__chat-view__message {
     width: 100%;
     display: flex;
@@ -277,14 +282,16 @@ div.home__container__chat-view__message__char-count {
     align-items: center;
     justify-content: center;
 }
-.home__container__chat-view {
-    width: calc(100% - 10px); /* Adjust width when users-view is hidden */
+@media screen and (max-width:630px) {
+    div.home__container__users-view {
+        display: none;
+    }
+    div.home__container__chat-view {
+        width: calc(100% - 0px);
+    }
 }
-
-.hidden {
-    display: none;
-}
-
-.expanded {
-    width: 100%;
+/* Example CSS for message timestamps */
+.message-timestamp {
+    font-size: 0.8rem;
+    color: #999;
 }
