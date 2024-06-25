@@ -47,24 +47,47 @@ socket.on('receive message', message => {
 });
 
 
+// Update receive chatlog event in home.js
 socket.on('receive chatlog', messages => {
     let html = '';
-    for (let i = messages.length - 1; i >= 0; i--) {
-        const { username, content } = messages[i];
-        assignColor(username);
+    messages.forEach(message => {
+        const formattedTime = formatMessageTimestamp(message.timestamp);
         html += `
-            <div class="home__container__chat-view__chatlog__message ${username === myUsername ? 'my-message' : 'other-message'}">
-                <div class="${username === myUsername ? 'my-round' : 'round'}" style="background-color:${userColors[username]}">
-                    <strong>${username.charAt(0).toUpperCase()}</strong>
+            <div class="home__container__chat-view__chatlog__message ${message.username === myUsername ? 'my-message' : 'other-message'}">
+                <div class="${message.username === myUsername ? 'my-round' : 'round'}" style="background-color:${userColors[message.username]}">
+                    <strong>${message.username.charAt(0).toUpperCase()}</strong>
                 </div>
                 <div class="message-content">
-                    ${content}
+                    ${message.content}
+                     <span class="message-timestamp">${formattedTime}</span>
                 </div>
+                
             </div>
         `;
-    }
+    });
     $('.home__container__chat-view__chatlog').html(html);
+    $('.home__container__chat-view__chatlog')[0].scrollTop = $('.home__container__chat-view__chatlog')[0].scrollHeight;
 });
+
+
+// Function to format message timestamp
+function formatMessageTimestamp(timestamp) {
+    const date = new Date(timestamp);
+    const formattedTime = new Intl.DateTimeFormat('en-US', {
+        hour: 'numeric',
+        minute: 'numeric',
+        hour12: true
+    }).format(date);
+
+    const formattedDate = new Intl.DateTimeFormat('en-US', {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric'
+    }).format(date);
+
+    return `${formattedDate}, ${formattedTime}`;
+}
+
 
 socket.on('receive users', users => {
     let html = '';

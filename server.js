@@ -53,6 +53,7 @@ const server = http.createServer(app); // Create HTTP server running Express.js 
 const io = new Server(server); // Setup Socket.IO server
 const clients = {}; // JSON of all connected clients
 
+
 io.on('connection', socket => {
     socket.on('hello', username => {
         const usernames = Object.values(clients); // Get list of usernames

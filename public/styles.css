@@ -295,3 +295,8 @@ div.home__container__chat-view__message__char-count {
     font-size: 0.8rem;
     color: #999;
 }
+.message-content{
+    display: flex;
+    flex-direction: column;
+    grid-auto-flow: 5px;
+}
