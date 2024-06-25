@@ -20,13 +20,15 @@ var socket = io();
 socket.emit('hello', myUsername);
 
 socket.on('new user', username => {
-    assignColor(username);
-    let html = $('.home__container__users-view__list').html();
-    html += `
-        <div class="home__container__users-view__list__user ${username === myUsername ? 'current-user' : ''}" id="user_${username}" style="color:${userColors[username]}">${username}</div>
-    `;
-    $('.home__container__users-view__list').html(html);
+    if ($(`#user_${username}`).length === 0) { // Check if user already exists
+        let html = $('.home__container__users-view__list').html();
+        html += `
+            <div class="home__container__users-view__list__user ${username === myUsername ? 'current-user' : ''}" id="user_${username}">${username}</div>
+        `;
+        $('.home__container__users-view__list').html(html);
+    }
 });
+
 
 // Update receive message event handling in home.js
 socket.on('receive message', message => {
@@ -92,9 +94,8 @@ function formatMessageTimestamp(timestamp) {
 socket.on('receive users', users => {
     let html = '';
     users.forEach(user => {
-        assignColor(user);
         html += `
-            <div class="home__container__users-view__list__user ${user === myUsername ? 'current-user' : ''}" id="user_${user}" >${user}</div>
+            <div class="home__container__users-view__list__user ${user === myUsername ? 'current-user' : ''}" id="user_${user}">${user}</div>
         `;
     });
     $('.home__container__users-view__list').html(html);
